@@ -2,39 +2,32 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <title>شركة القهوة</title>
+    <title> Coffee Company </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="./assets/images/coffee-logo.jpg" alt="شعار شركة القهوة" class="logo" />☕ شركة القهوة</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navContent">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="index.html">الرئيسية</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">المنتجات</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="distributors.html">الموزعين </a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="#">حول الشركة </a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="contact.html">اتصل بنا</a>
-                </li>
-            </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+      <div class="container justify-content-right gap-md-4 d-flex align-items-center">
+        <a class="navbar-brand d-flex align-items-right gap-1" href="index.html">
+          <img src="./assets/images/onuan-coffee.png" alt="شعار شركة القهوة" class="logo" />شركة القهوة
+        </a>
+        <button class="navbar-toggler me-5 me-md-5" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navContent">
+          <ul class="navbar-nav mx-auto gap-md-4 d-flex">
+            <li class="nav-item"><a class="nav-link active" href="index.html">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link" href="#products">المنتجات</a></li>
+            <li class="nav-item"><a class="nav-link" href="distributors.html">الموزعين</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">حول الشركة</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact-info">اتصل بنا</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
-    <header class="container text-center mt-4">
+
+    <header class="container text-center mt-4 mx-auto">
       <h1>مرحبًا بكم في شركة القهوة ☕</h1>
     </header>
 
@@ -88,7 +81,7 @@
       </section>
 
       <!-- ✅ بطاقات المنتجات -->
-      <section class="products text-center my-5">
+      <section class="products text-center my-5" id="products">
         <h2>منتجاتنا</h2>
         <div class="row mt-4">
              <!-- كابتشينو -->
@@ -127,5 +120,100 @@
         </div>
       </section>
     </main>
+    <!-- ✅ تواصل معنا -->
+    <section class="contact-info" id="contactForm">
+      <div class="contact-title text-center">
+        <h3>تواصل معنا</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-8">
+          <form class="contact-form row" id="contactForm">
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="name" placeholder="الاسم" required>
+            </div>
+            <div class="col-sm-6">
+              <input type="email" class="form-control" name="email" placeholder="البريد الإلكتروني" required>
+            </div>
+            <div class="col-12">
+              <textarea class="form-control" rows="5" placeholder="نص الرسالة أو تفاصيل المشروع" required></textarea>
+            </div>
+            <button type="submit" class="btn">إرسال</button>
+          </form>
+        </div>
+        <div class="col-md-4 col-sm-6">
+          <ul class="contact-us list-unstyled">
+            <li>
+              <i class="fas fa-phone"></i>
+              00966548000536 - 00201009614155
+            </li>
+            <li>
+              <i class="far fa-envelope"></i>
+              Abdalla.77@outlook.com
+            </li>
+          </ul>
+          <hr>
+          <ul class="social list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://github.com/Abdullah-Taha07" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/abdalla-taha-abdel-alim-mohammed-097116228" target="_blank">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://x.com/abdullah_taha07" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/Abdalla.TM7/" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+    <div class="top-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="about-us" id="about">
+              <h5>عـن الشـركـة</h5>
+              <p>
+                شركتنا متخصصة في تصميم وبرمجة المواقع الإلكترونية والتي تعكس هويتك بمظهر عصري وجذاب مع تجربة مستخدم سلسة تتوافق مع جميع أجهزة وشاشات العرض المختلفة وبشكل متناسق مع جميع المتصفحات بالإضافة الي تحسين محركات البحث بسرعة تحميل عالية ليجذب زوارك ويعكس هوية علامتك التجارية ويعزز من نتائجك ، ويزيد من نجاحك الرقمي .
+              </p>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href=""><i class="fab fa-pinterest"></i></a></li>
+                <li class="list-inline-item"><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+                <li class="list-inline-item"><a href=""><i class="fab fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href=""><i class="fab fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="contact-us">
+              <h5>الاتـصـال بالـشـركـة</h5>
+              <ul class="contact-list">
+                <li><i class="fas fa-map-marker-alt"></i>مركز برج المملكة شارع العليا ، الرياض </li>
+                <li><i class="fas fa-phone"></i>536 8000 54 966+</li>
+                <li><i class="fas fa-envelope"></i>Abdalla.77@outlook.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>جـمـيـع الـحـقـوق مـحـفـوظــة <span id="fullYear"></span> &copy; </p>
+    </div>
+  </footer>
+
   </body>
 </html>

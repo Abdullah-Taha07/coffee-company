@@ -1,8 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 // 👇 كل الصفحات هنا
-const pages = ['index', 'product', 'coffee', 'turkish', 'distributors', 'contact', 'cappuccino'];
+const pages = ['index', 'product', 'coffee', 'turkish', 'distributors', 'cappuccino'];
 
 // توليد الـ HtmlWebpackPlugin حسب مسار الصفحة
 const htmlPlugins = pages.map((name) => {
@@ -23,7 +25,7 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    assetModuleFilename: 'assets/[hash][ext][query]' // للصور والخطوط
+    assetModuleFilename: 'assets/[hash][ext][query]'
   },
 
   module: {
@@ -35,25 +37,29 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            sourceType: 'unambiguous',
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
+            "sourceType": "unambiguous"
           }
         }
       },
 
-      // SCSS/SASS
+      // SCSS/SASS (باستخدام MiniCssExtractPlugin في الإنتاج)
       {
         test: /\.scss$/i,
-        use: ['style-loader', 'css-loader', 'sass-loader']
+        use: [
+          process.env.NODE_ENV === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       },
 
-      // CSS فقط (إن وجد)
+      // CSS فقط
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader']
       },
 
-      // صور (jpg, png, svg, gif)
+      // صور
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset/resource',
@@ -71,7 +77,7 @@ module.exports = {
         }
       },
 
-      // HTML - لتحليل الصور داخل HTML
+      // HTML
       {
         test: /\.html$/i,
         loader: 'html-loader'
@@ -80,6 +86,11 @@ module.exports = {
   },
 
   plugins: [
+    ...(process.env.NODE_ENV === 'production' ? [new MiniCssExtractPlugin({
+      filename: 'styles/[name].[contenthash].css'
+    })] : []),
+
+    new CleanWebpackPlugin(),
     ...htmlPlugins
   ],
 

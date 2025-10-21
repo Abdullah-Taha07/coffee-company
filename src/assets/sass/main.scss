@@ -1,19 +1,65 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f7f4f1;
-  margin: 0;
-  padding: 0;
+// =========================
+// 1. استدعاء الخطوط Cairo
+// =========================
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo-SemiBold.ttf') format('truetype');
+  font-weight: 600; // وزن العناوين
+  font-style: normal;
+  font-display: swap;
+}
+
+// ========================================
+// 2. ضبط الخط العام للموقع والنصوص العادية
+// ========================================
+
+* {
+  font-family: sans-serif;
+  font-weight: 700; // الوزن العادي للنصوص
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// =======================
+// 3. تعيين الخط البولد للعناوين فقط
+// =======================
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
+
+// =======================
+// 4. تنسيقات عامة
+// =======================
+
+body {
+  background-color: #e4dac1;
+}
+
+// قسم البطل أو الهيرو
 .hero {
   margin-top: 50px;
 }
 
+// كروت المحتوى
 .card {
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* ألوان مخصصة حسب نوع القهوة */
+// ================================
+// 5. ألوان ديناميكية حسب نوع القهوة
+// ================================
+
 body.cappuccino {
   --main-color: #d8a17e;
 }
@@ -26,7 +72,10 @@ body.turkish {
   --main-color: #a78b71;
 }
 
-/* تنسيقات صفحات المنتجات */
+// ============================
+// 6. تصميم صفحات المنتجات
+// ============================
+
 body.product-page {
   background-color: #fdfaf7;
 
@@ -39,6 +88,11 @@ body.product-page {
     border-color: var(--main-color);
   }
 }
+
+// ============================
+// 7. تأثير التقييمات عند الظهور
+// ============================
+
 .review {
   opacity: 0;
   transform: translateY(10px);
@@ -49,13 +103,182 @@ body.product-page {
     transform: translateY(0);
   }
 }
+
+// ============================
+// 8. تصميم الـ Navbar
+// ============================
+
+nav.navbar {
+  background-color: #e3d6b6;
+}
+
 .navbar-brand {
   display: flex;
   align-items: center;
 
   .logo {
     height: 40px;
-    margin-left: 10px; // لأن اتجاه الموقع RTL والمسافة على اليسار
+    margin-left: 10px; // للمواقع RTL
   }
 }
 
+.navbar-nav {
+  .nav-link {
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #000;
+
+    &:hover,
+    &:focus {
+      background-color: #f0c040;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &.active {
+      background-color: #d18c00;
+      color: #fff;
+    }
+  }
+}
+
+// ================================
+// 9. تصميم قسم الاتصال (contact)
+// ================================
+
+.contact-info {
+  padding: 3rem 1rem;
+  background-color: #fdf8f3;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(111, 78, 55, 0.15);
+
+  .contact-title {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #6f4e37; // لون بني دافئ يناسب القهوة
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  }
+
+  .contact-form {
+    .form-control {
+      border: 1px solid #d6cfc7;
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      font-family: 'Cairo', sans-serif;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: #6f4e37;
+        box-shadow: 0 0 8px rgba(111, 78, 55, 0.4);
+        outline: none;
+      }
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .btn {
+      background-color: #6f4e37;
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #563d29;
+      }
+    }
+  }
+
+  .contact-us {
+    font-family: 'Cairo', sans-serif;
+    font-size: 1.1rem;
+    color: #6f4e37;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+
+      i {
+        font-size: 1.3rem;
+        color: #6f4e37;
+      }
+    }
+  }
+
+  hr {
+    border-color: #d6cfc7;
+    margin: 2rem 0;
+  }
+
+  .social {
+    li {
+      margin: 0 0.7rem;
+
+      a {
+        color: #6f4e37;
+        font-size: 1.6rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #563d29;
+        }
+      }
+    }
+  }
+}
+
+// ============================
+// 10. رسائل الفورم تحت النموذج
+// ============================
+
+.form-message {
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  transition: opacity 0.3s ease;
+
+  &.alert {
+    &.alert-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    &.alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+  }
+}
+.navbar {
+  display: flex;
+  align-items: start;
+  
+  .logo {
+    margin-left: auto;  // يخلي الشعار يتثبت على اليمين
+    font-weight: bold;
+  }
+}

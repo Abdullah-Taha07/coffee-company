@@ -1,13 +1,13 @@
 {
   "name": "coffee-company",
   "version": "1.0.0",
-  "description": "",
+  "description": "موقع إلكتروني لشركة متخصصة في إنتاج القهوة، تم تنفيذه كمشروع نهائي لتطبيق المهارات المكتسبة في تطوير واجهات الويب.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --open",
-    "build": "webpack",
-    "build:prod": "cross-env NODE_ENV=production webpack --mode=production"
+    "dev": "webpack serve --config webpack.config.js --env NODE_ENV=development",
+    "build": "webpack --config webpack.config.js --env NODE_ENV=production",
+    "watch": "webpack --watch --config webpack.config.js --env NODE_ENV=development",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "Abdalla Mohamed",
@@ -16,11 +16,14 @@
     "@babel/core": "^7.28.4",
     "@babel/preset-env": "^7.28.3",
     "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^10.1.0",
     "css-loader": "^7.1.2",
     "file-loader": "^6.2.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
+    "rimraf": "^5.0.5",
     "sass": "^1.93.2",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
@@ -29,7 +32,16 @@
     "webpack-dev-server": "^5.2.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "bootstrap": "^5.3.8",
     "jquery": "^3.7.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdullah-Taha07/coffee-company.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Abdullah-Taha07/coffee-company"
+  },
+  "homepage": "https://github.com/Abdullah-Taha07/coffee-company"
 }
