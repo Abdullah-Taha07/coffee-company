@@ -1,0 +1,61 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f4f1;
+  margin: 0;
+  padding: 0;
+}
+
+.hero {
+  margin-top: 50px;
+}
+
+.card {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* ألوان مخصصة حسب نوع القهوة */
+body.cappuccino {
+  --main-color: #d8a17e;
+}
+
+body.coffee {
+  --main-color: #6f4e37;
+}
+
+body.turkish {
+  --main-color: #a78b71;
+}
+
+/* تنسيقات صفحات المنتجات */
+body.product-page {
+  background-color: #fdfaf7;
+
+  h2, h3, h4 {
+    color: var(--main-color);
+  }
+
+  .btn-success {
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+  }
+}
+.review {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease-in-out;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+
+  .logo {
+    height: 40px;
+    margin-left: 10px; // لأن اتجاه الموقع RTL والمسافة على اليسار
+  }
+}
+
