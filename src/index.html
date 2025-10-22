@@ -2,218 +2,248 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <title> Coffee Company </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>coffee-company</title>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light ">
-      <div class="container justify-content-right gap-md-4 d-flex align-items-center">
+    <!-- ✅ رأس الصفحة (Navbar) -->
+    <header class="main-header sticky-top bg-light border-bottom">
+      <nav class="container navbar navbar-expand-lg navbar-light justify-content-between">
+        <!-- ✅ شعار الشركة -->
         <a class="navbar-brand d-flex align-items-right gap-1" href="index.html">
-          <img src="./assets/images/onuan-coffee.png" alt="شعار شركة القهوة" class="logo" />شركة القهوة
+          <img src="./assets/images/onuan-coffee.png" alt="شعار الشركة" class="logo">شركة القهوة
         </a>
-        <button class="navbar-toggler me-5 me-md-5" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+
+        <!-- ✅ زر التبديل في الشاشات الصغيرة -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse justify-content-center" id="navContent">
-          <ul class="navbar-nav mx-auto gap-md-4 d-flex">
-            <li class="nav-item"><a class="nav-link active" href="index.html">الرئيسية</a></li>
-            <li class="nav-item"><a class="nav-link" href="#products">المنتجات</a></li>
-            <li class="nav-item"><a class="nav-link" href="distributors.html">الموزعين</a></li>
-            <li class="nav-item"><a class="nav-link" href="#about">حول الشركة</a></li>
-            <li class="nav-item"><a class="nav-link" href="#contact-info">اتصل بنا</a></li>
+
+        <!-- ✅ روابط التنقل -->
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav gap-3">
+            <li class="nav-item">
+              <a class="nav-link active" href="#main">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">الخدمات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products">المنتجات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">حول</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">اتصل بنا</a>
+            </li>
           </ul>
         </div>
-      </div>
-    </nav>
-
-    <header class="container text-center mt-4 mx-auto">
-      <h1>مرحبًا بكم في شركة القهوة ☕</h1>
+      </nav>
     </header>
 
-    <!-- ✅ Carousel -->
-    <main class="container">
-      <section class="hero my-5">
-        <div id="coffeeCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://unsplash.com/photos/TD4DBagg2wE/download?force=true" class="d-block w-100" alt="صورة 1">
-            </div>
-            <div class="carousel-item">
-              <img src="https://unsplash.com/photos/tNALoIZhqVM/download?force=true" class="d-block w-100" alt="صورة 2">
-            </div>
-            <div class="carousel-item">
-              <img src="https://unsplash.com/photos/6VhPY27jdps/download?force=true" class="d-block w-100" alt="صورة 3">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#coffeeCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#coffeeCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon"></span>
-          </button>
-        </div>
-      </section>
-
-      <!-- ✅ بطاقات المميزات -->
-      <section class="features text-center my-5">
-        <h2>مميزاتنا</h2>
-        <div class="row mt-4">
-          <div class="col-md-4">
-            <div class="card p-3">
-              <h5>شحن مباشر من المصنع</h5>
-              <p>دائمًا طازجة، مباشرة من المصدر.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card p-3">
-              <h5>تغليف مقاوم للحرارة</h5>
-              <p>نحافظ على الجودة حتى باب منزلك.</p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card p-3">
-              <h5>نقاط المكافآت</h5>
-              <p>اكسب النقاط مع كل طلب.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ✅ بطاقات المنتجات -->
-      <section class="products text-center my-5" id="products">
-        <h2>منتجاتنا</h2>
-        <div class="row mt-4">
-             <!-- كابتشينو -->
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://unsplash.com/photos/WJzyp64NmyA/download?force=true" class="card-img-top" alt="كابتشينو">
-              <div class="card-body">
-                <h5 class="card-title">كابتشينو</h5>
-                <p class="card-text">نكهة إيطالية أصلية بالحليب والرغوة</p>
-                <a href="cappuccino.html" class="btn btn-primary">عرض المنتج</a>
-              </div>
-            </div>
-          </div>
-          <!-- قهوة عادية -->
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://unsplash.com/photos/tXYg4Zx7kSU/download?force=true" class="card-img-top" alt="قهوة عادية">
-              <div class="card-body">
-                <h5 class="card-title">قهوة عادية</h5>
-                <p class="card-text">قهوة محمصة من أجود المزارع</p>
-                <a href="coffee.html" class="btn btn-primary">عرض المنتج</a>
-              </div>
-            </div>
-          </div>
-          <!-- القهوة التركية -->
-          <div class="col-md-4">
-            <div class="card">
-              <img src="https://unsplash.com/photos/7X96RNhpxBc/download?force=true" class="card-img-top" alt="قهوة تركية">
-              <div class="card-body">
-                <h5 class="card-title">قهوة تركية</h5>
-                <p class="card-text">مطحونة بدقة، بطابع عثماني أصيل</p>
-                <a href="turkish.html" class="btn btn-primary">عرض المنتج</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <!-- ✅ تواصل معنا -->
-    <section class="contact-info" id="contactForm">
-      <div class="contact-title text-center">
-        <h3>تواصل معنا</h3>
+    <!-- ترحيب في بداية الصفحة  -->
+    <section class="py-5 text-center bg-white">
+      <div class="container">
+        <h1 class="mb-4">مرحبًا بكم في موقعنا شركة القهوة</h1>
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="مج قهوة" class="img-fluid" style="max-width: 300px;" />
       </div>
-      <div class="row">
-        <div class="col-md-8">
-          <form class="contact-form row" id="contactForm">
-            <div class="col-sm-6">
-              <input type="text" class="form-control" name="name" placeholder="الاسم" required>
-            </div>
-            <div class="col-sm-6">
-              <input type="email" class="form-control" name="email" placeholder="البريد الإلكتروني" required>
-            </div>
-            <div class="col-12">
-              <textarea class="form-control" rows="5" placeholder="نص الرسالة أو تفاصيل المشروع" required></textarea>
-            </div>
-            <button type="submit" class="btn">إرسال</button>
-          </form>
+    </section>
+
+    <!-- قسم عرض الشرائح Carousel -->
+    <section id="main" class="container my-5">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <ul class="contact-us list-unstyled">
-            <li>
-              <i class="fas fa-phone"></i>
-              00966548000536 - 00201009614155
-            </li>
-            <li>
-              <i class="far fa-envelope"></i>
-              Abdalla.77@outlook.com
-            </li>
-          </ul>
-          <hr>
-          <ul class="social list-inline text-center">
-            <li class="list-inline-item">
-              <a href="https://github.com/Abdullah-Taha07" target="_blank">
-                <i class="fa-brands fa-github"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.linkedin.com/in/abdalla-taha-abdel-alim-mohammed-097116228" target="_blank">
-                <i class="fab fa-linkedin"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://x.com/abdullah_taha07" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.facebook.com/Abdalla.TM7/" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-          </ul>
+        <div class="carousel-inner rounded">
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" class="d-block w-100" alt="عرض شرائح 1" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photos/tNALoIZhqVM" class="d-block w-100" alt="عرض شرائح 2" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photos/6VhPY27jdps" class="d-block w-100" alt="عرض شرائح 3" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photos/6GDW9BVdmkw" class="d-block w-100" alt="عرض شرائح 4" />
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photos/nzyzAUsbV0M" class="d-block w-100" alt="عرض شرائح 5" />
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">السابق</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">التالي</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ✅ قسم الخدمات -->
+    <section id="services" class="container my-5">
+      <h2 class="mb-4 text-center">خدماتنا</h2>
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <div class="card p-3 shadow-sm h-100">
+            <h5>الشحن السريع</h5>
+            <p>دائماً يتم شحن منتجاتنا الطازجة مباشرة من المصنع.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-3 shadow-sm h-100">
+            <h5>التغليف المحمي</h5>
+            <p>ترسل منتجاتنا في عبوات خاصة توفر الحماية الكاملة ضد الحرارة والتأثيرات الخارجية.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="card p-3 shadow-sm h-100">
+            <h5>نظام النقاط</h5>
+            <p>أدخل رقم هاتفك في ملف التعريف واكسب نقاطاً لكل طلبية.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer class="footer">
-    <div class="top-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="about-us" id="about">
-              <h5>عـن الشـركـة</h5>
-              <p>
-                شركتنا متخصصة في تصميم وبرمجة المواقع الإلكترونية والتي تعكس هويتك بمظهر عصري وجذاب مع تجربة مستخدم سلسة تتوافق مع جميع أجهزة وشاشات العرض المختلفة وبشكل متناسق مع جميع المتصفحات بالإضافة الي تحسين محركات البحث بسرعة تحميل عالية ليجذب زوارك ويعكس هوية علامتك التجارية ويعزز من نتائجك ، ويزيد من نجاحك الرقمي .
+    <!-- ✅ قسم المنتجات -->
+    <section id="products" class="container my-5">
+      <h2 class="mb-4 text-center">منتجاتنا</h2>
+      <div class="row text-center">
+
+        <!-- منتج كابتشينو -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photos/WJzyp64NmyA" class="card-img-top" alt="كابتشينو" />
+            <div class="card-body">
+              <h5 class="card-title">كابتشينو</h5>
+              <p class="card-text">
+                نوع من أنواع القهوة التي يمزج معها الحليب، تزين بأنواع من الرغوة أو الكريمة. كل كوب يحتوي على حوالي 300 سعرات حرارية.
               </p>
-              <ul class="list-inline">
-                <li class="list-inline-item"><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                <li class="list-inline-item"><a href=""><i class="fab fa-pinterest"></i></a></li>
-                <li class="list-inline-item"><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                <li class="list-inline-item"><a href=""><i class="fab fa-twitter"></i></a></li>
-                <li class="list-inline-item"><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-              </ul>
+              <a href="./pages/cappuccino.html" class="btn btn-primary">التفاصيل</a>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="contact-us">
-              <h5>الاتـصـال بالـشـركـة</h5>
-              <ul class="contact-list">
-                <li><i class="fas fa-map-marker-alt"></i>مركز برج المملكة شارع العليا ، الرياض </li>
-                <li><i class="fas fa-phone"></i>536 8000 54 966+</li>
-                <li><i class="fas fa-envelope"></i>Abdalla.77@outlook.com</li>
-              </ul>
+        </div>
+
+        <!-- منتج قهوة عادية -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photos/tXYg4Zx7kSU" class="card-img-top" alt="قهوة عادية" />
+            <div class="card-body">
+              <h5 class="card-title">قهوة عادية</h5>
+              <p class="card-text">
+                مشروب يعد من بذور البن المحمصة، ينمو في أكثر من 70 بلداً. تحتوي على الكافيين وتعتبر من المشروبات الأكثر شعبية في العالم.
+              </p>
+              <a href="./pages/coffee.html" class="btn btn-primary">التفاصيل</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- منتج القهوة التركية -->
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://images.unsplash.com/photos/7X96RNhpxBc" class="card-img-top" alt="القهوة التركية" />
+            <div class="card-body">
+              <h5 class="card-title">القهوة التركية</h5>
+              <p class="card-text">
+                نوع من القهوة تُعد باستخدام حبوب البن المطحونة بدقة عالية، وتتميز بثقافة عريقة تعود للدولة العثمانية.
+              </p>
+              <a href="./pages/turkish.html" class="btn btn-primary">التفاصيل</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="copyright">
-      <p>جـمـيـع الـحـقـوق مـحـفـوظــة <span id="fullYear"></span> &copy; </p>
+    </section>
+
+    <!-- ✅ قسم حول الشركة -->
+    <section id="about" class="py-5 bg-light text-center">
+      <div class="container">
+        <h2 class="mb-4">حول الشركة</h2>
+        <p>
+          شركة القهوة شركة رائدة في صناعة القهوة الفاخرة، نعمل منذ سنوات على تقديم أفضل أنواع القهوة من مصادرها الأصلية، بأساليب تحمي الجودة والنكهة.
+        </p>
+      </div>
+    </section>
+
+    <!-- ✅ قسم اتصل بنا -->
+    <section id="contact" class="py-5 text-center bg-white">
+      <div class="container">
+        <h2 class="mb-4">اتصل بنا</h2>
+        <div class="row text-start align-items-start">
+
+          <!-- ✅ الموقع على الخريطة -->
+          <div class="col-md-6 mb-3">
+            <iframe
+              src="https://maps.google.com/maps?q=Riyadh&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="250"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
+          </div>
+          <!-- ✅ العنوان وساعات العمل -->
+          <div class="col-md-6">
+            <h5>موقعنا</h5>
+            <p>حي العارض - الرياض ، المملكة العربية السعودية</p>
+            <p><strong>أيام العمل: </strong> الأحد - الخميس</p>
+            <p><strong>ساعات العمل : </strong> 9 صباحًا - 6 مساءً</p>
+
+            <!-- ✅ نموذج التواصل -->
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="الاسم" required />
+              </div>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="البريد الإلكتروني" required />
+              </div>
+              <div class="mb-3">
+                <textarea class="form-control" placeholder="رسالتك" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">إرسال</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <!-- النشرة البريدية -->
+      <div class="mb-4">
+        <h5>اشترك في نشرتنا البريدية</h5>
+        <form class="row g-2">
+          <div class="col-md-9">
+            <input type="email" class="form-control" placeholder="أدخل بريدك الإلكتروني" required />
+          </div>
+          <div class="col-md-3">
+            <button type="submit" class="btn btn-primary w-100">اشترك</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- الحقوق -->
+      <div class="text-center mt-3">
+        <small>© 2025 جميع الحقوق محفوظة لشركة القهوة</small>
+      </div>
     </div>
   </footer>
-
   </body>
 </html>
