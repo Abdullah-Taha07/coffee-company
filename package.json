@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "webpack serve --mode development --config webpack.config.js",
     "build": "webpack --mode production --config webpack.config.js",
-    "test:build": "webpack --config webpack.config.js --dry-run"
+    "test:build": "webpack --config webpack.config.js --dry-run",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Abdalla T Mohamed",
   "license": "ISC",
