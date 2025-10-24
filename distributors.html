@@ -1,57 +1,166 @@
-<head><script defer src="bundle.js"></script></head><nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">☕ شركة القهوة</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navContent">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">الرئيسية</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="product.html">كابتشينو</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="coffee.html">القهوة</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="turkish.html">القهوة التركية</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="distributors.html">الموزعين</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contact.html">اتصل بنا</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موزعون منتجات القهوة</title>
+<script defer src="js/runtime.js"></script><script defer src="js/599.js"></script><script defer src="js/891.js"></script><script defer src="js/main.js"></script><script defer src="js/product.js"></script></head>
+<body data-theme="coffee">
 
-<section class="container my-5">
-  <h2>موزعونا</h2>
-  <div class="row g-4">
-    <div class="col-md-6">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.051674045148!2d46.675295!3d24.713551!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f036fdd62d799%3A0x4aef7d9e10e1e1d7!2z2KfZhNmF2K3Yp9mFINmE2YTYs9mF2Kkg2KfZhNmF2YjZhtin2YUg2KfZhNin2YXYs9mK2Kkg2YTZg9iq2YjYudmK2YUg2KfZhNis2YTZitmG!5e0!3m2!1sar!2ssa!4v1700000000000"
-        width="100%" height="300" style="border:0;" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-body">
-          <h5>موزع الرياض</h5>
-          <p>الرياض، شارع العليا</p>
-          <p>📞 0500000000</p>
+  <!-- رأس الصفحة (Navbar) -->
+  <header class="main-header sticky-top bg-light border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light justify-content-between container-fluid px-0">
+
+      <!-- شعار الشركة -->
+      <a class="navbar-brand d-flex align-items-right gap-1" href="index.html">
+        <img src="../assets/images/onuan-coffee.png" alt="شعار الشركة" class="logo">
+        شركة القهوة
+      </a>
+
+      <!-- زر التبديل في الشاشات الصغيرة -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- روابط التنقل -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav gap-5">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html" target="_blank">الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="turkish.html" target="_blank">المنتجات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="distributors.html" target="_blank">الموزعين</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">اتصل بنا</a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- المحتوى الرئيسي -->
+  <main id="distributors" class="container">
+    <h2>الموزعون</h2>
+    <div class="row g-3">
+
+      <!-- موزع 1 -->
+      <div class="col-12 col-lg-6">
+        <div class="distributor-card">
+          <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Riyadh&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+          </div>
+          <div class="card-body">
+            <h5>موزع الرياض</h5>
+            <p>حي العليا، الرياض</p>
+            <p>هاتف: 011-1234567</p>
+          </div>
         </div>
       </div>
-      <div class="card mt-3">
-        <div class="card-body">
-          <h5>موزع جدة</h5>
-          <p>جدة، شارع التحلية</p>
-          <p>📞 0555555555</p>
+
+      <!-- موزع 2 -->
+      <div class="col-12 col-lg-6">
+        <div class="distributor-card">
+          <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Jeddah&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+          </div>
+          <div class="card-body">
+            <h5>موزع جدة</h5>
+            <p>حي التحلية، جدة</p>
+            <p>هاتف: 012-7654321</p>
+          </div>
         </div>
       </div>
+
+      <!-- موزع 3 -->
+      <div class="col-12 col-lg-6">
+        <div class="distributor-card">
+          <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Dammam&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+          </div>
+          <div class="card-body">
+            <h5>موزع الدمام</h5>
+            <p>حي العزيزية، الدمام</p>
+            <p>هاتف: 013-9876543</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- موزع 4 -->
+      <div class="col-12 col-lg-6">
+        <div class="distributor-card">
+          <div class="map-container">
+            <iframe src="https://maps.google.com/maps?q=Khobar&t=&z=13&ie=UTF8&iwloc=&output=embed" loading="lazy"></iframe>
+          </div>
+          <div class="card-body">
+            <h5>موزع الخبر</h5>
+            <p>حي العليا، الخبر</p>
+            <p>هاتف: 014-1122334</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </div>
-</section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer py-5 mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- القسم الأول: روابط التواصل -->
+        <div class="col-12 col-md-6 mb-4 mb-md-0 text-center">
+          <h5 class="footer-title mb-4">تابعنا على</h5>
+          <ul class="social-links list-unstyled d-flex justify-content-center gap-3">
+            <li>
+              <a href="#" class="social-link d-flex flex-column align-items-center">
+                <i class="bi bi-facebook"></i>
+                <span>فيسبوك</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link d-flex flex-column align-items-center">
+                <i class="bi bi-twitter-x"></i>
+                <span>تويتر</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link d-flex flex-column align-items-center">
+                <i class="bi bi-instagram"></i>
+                <span>إنستجرام</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link d-flex flex-column align-items-center">
+                <i class="bi bi-linkedin"></i>
+                <span>لينكدإن</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- القسم الثاني: الاشتراك -->
+        <div class="col-12 col-md-6 text-center">
+          <h5 class="footer-title mb-4">اشترك في النشرة البريدية</h5>
+          <form class="subscribe-form d-flex flex-column flex-md-row gap-3 justify-content-center">
+            <input type="email" class="form-control" placeholder="ادخل بريدك الإلكتروني" required>
+            <button type="submit" class="btn btn-coffee">اشترك</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- الحقوق -->
+      <div class="footer-bottom text-center py-3">
+        <small>جميع الحقوق محفوظة لشركة القهوة 2025 ©</small>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

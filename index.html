@@ -4,15 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>coffee-company</title>
-  </head>
+  <script defer src="js/runtime.js"></script><script defer src="js/599.js"></script><script defer src="js/891.js"></script><script defer src="js/main.js"></script><script defer src="js/product.js"></script></head>
   <body>
     <!-- ✅ رأس الصفحة (Navbar) -->
     <header class="main-header sticky-top bg-light border-bottom">
-      <nav class="container navbar navbar-expand-lg navbar-light justify-content-between">
+      <nav class="navbar navbar-expand-lg navbar-light justify-content-between container-fluid px-0">
         <!-- ✅ شعار الشركة -->
         <a class="navbar-brand d-flex align-items-right gap-1" href="index.html">
-          <img src="./assets/images/onuan-coffee.png" alt="شعار الشركة" class="logo">شركة القهوة
-        </a>
+          <img src="assets/images/logo.png" src="https://thenounproject.com/search/?q=coffee&i=2777561" alt="" class="logo">شركة القهوة</a>
 
         <!-- ✅ زر التبديل في الشاشات الصغيرة -->
         <button
@@ -25,7 +24,7 @@
 
         <!-- ✅ روابط التنقل -->
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul class="navbar-nav gap-3">
+          <ul class="navbar-nav gap-5">
             <li class="nav-item">
               <a class="nav-link active" href="#main">الرئيسية</a>
             </li>
@@ -34,6 +33,9 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#products">المنتجات</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="distributors.html" target="_blank">الموزعين</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">حول</a>
@@ -46,15 +48,15 @@
       </nav>
     </header>
 
-    <!-- ترحيب في بداية الصفحة  -->
-    <section class="py-5 text-center bg-white">
+    <!-- ترحيب في بداية الصفحة -->
+    <section class="hero-section text-center">
       <div class="container">
-        <h1 class="mb-4">مرحبًا بكم في موقعنا شركة القهوة</h1>
-        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="مج قهوة" class="img-fluid" style="max-width: 300px;" />
+        <h1>مرحبًا بكم في موقعنا شركة القهوة</h1>
       </div>
+      <a href="#main"></a>
     </section>
 
-    <!-- قسم عرض الشرائح Carousel -->
+    <!-- قسم عارض الشرائح Carousel -->
     <section id="main" class="container my-5">
       <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" >
         <div class="carousel-indicators">
@@ -71,19 +73,19 @@
         </div>
         <div class="carousel-inner rounded">
           <div class="carousel-item active">
-            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" class="d-block w-100" alt="عرض شرائح 1" />
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1037" class="d-block w-100" alt="عارض شرائح 1" />
           </div>
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photos/tNALoIZhqVM" class="d-block w-100" alt="عرض شرائح 2" />
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" class="d-block w-100" alt="عارض شرائح 2" />
           </div>
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photos/6VhPY27jdps" class="d-block w-100" alt="عرض شرائح 3" />
+            <img src="https://images.unsplash.com/photo-1511759066510-46958c3fffa0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=876" class="d-block w-100" alt="عارض شرائح 3" />
           </div>
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photos/6GDW9BVdmkw" class="d-block w-100" alt="عرض شرائح 4" />
+            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1061" class="d-block w-100" alt="عارض شرائح 4" />
           </div>
           <div class="carousel-item">
-            <img src="https://images.unsplash.com/photos/nzyzAUsbV0M" class="d-block w-100" alt="عرض شرائح 5" />
+            <img src="https://images.unsplash.com/photo-1497515114629-f71d768fd07c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=884" class="d-block w-100" alt="عارض شرائح 5" />
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -98,23 +100,23 @@
     </section>
 
     <!-- ✅ قسم الخدمات -->
-    <section id="services" class="container my-5">
+    <section id="services" class="container py-5 my-5">
       <h2 class="mb-4 text-center">خدماتنا</h2>
       <div class="row text-center">
         <div class="col-md-4 mb-4">
-          <div class="card p-3 shadow-sm h-100">
+          <div class="card p-5 shadow-sm h-100">
             <h5>الشحن السريع</h5>
             <p>دائماً يتم شحن منتجاتنا الطازجة مباشرة من المصنع.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card p-3 shadow-sm h-100">
+          <div class="card p-5 shadow-sm h-100">
             <h5>التغليف المحمي</h5>
             <p>ترسل منتجاتنا في عبوات خاصة توفر الحماية الكاملة ضد الحرارة والتأثيرات الخارجية.</p>
           </div>
         </div>
         <div class="col-md-4 mb-4">
-          <div class="card p-3 shadow-sm h-100">
+          <div class="card p-5 shadow-sm h-100">
             <h5>نظام النقاط</h5>
             <p>أدخل رقم هاتفك في ملف التعريف واكسب نقاطاً لكل طلبية.</p>
           </div>
@@ -130,13 +132,13 @@
         <!-- منتج كابتشينو -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm">
-            <img src="https://images.unsplash.com/photos/WJzyp64NmyA" class="card-img-top" alt="كابتشينو" />
+            <img src="https://images.unsplash.com/photo-1534234757579-8ad69d218ad4?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870" class="card-img-top" alt="كابتشينو" />
             <div class="card-body">
               <h5 class="card-title">كابتشينو</h5>
               <p class="card-text">
                 نوع من أنواع القهوة التي يمزج معها الحليب، تزين بأنواع من الرغوة أو الكريمة. كل كوب يحتوي على حوالي 300 سعرات حرارية.
               </p>
-              <a href="./pages/cappuccino.html" class="btn btn-primary">التفاصيل</a>
+              <a href="cappuccino.html" class="btn btn-primary" target="_blank">التفاصيل</a>
             </div>
           </div>
         </div>
@@ -144,13 +146,13 @@
         <!-- منتج قهوة عادية -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm">
-            <img src="https://images.unsplash.com/photos/tXYg4Zx7kSU" class="card-img-top" alt="قهوة عادية" />
+            <img src="https://images.unsplash.com/photo-1422207258071-70754198c4a2?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=860" class="card-img-top" alt="قهوة عادية" />
             <div class="card-body">
               <h5 class="card-title">قهوة عادية</h5>
               <p class="card-text">
                 مشروب يعد من بذور البن المحمصة، ينمو في أكثر من 70 بلداً. تحتوي على الكافيين وتعتبر من المشروبات الأكثر شعبية في العالم.
               </p>
-              <a href="./pages/coffee.html" class="btn btn-primary">التفاصيل</a>
+              <a href="coffee.html" class="btn btn-primary" target="_blank">التفاصيل</a>
             </div>
           </div>
         </div>
@@ -158,13 +160,13 @@
         <!-- منتج القهوة التركية -->
         <div class="col-md-4 mb-4">
           <div class="card h-100 shadow-sm">
-            <img src="https://images.unsplash.com/photos/7X96RNhpxBc" class="card-img-top" alt="القهوة التركية" />
+            <img src="https://images.unsplash.com/photo-1604945516204-526aa4fd6425?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=869" class="card-img-top" alt="القهوة التركية" />
             <div class="card-body">
               <h5 class="card-title">القهوة التركية</h5>
               <p class="card-text">
                 نوع من القهوة تُعد باستخدام حبوب البن المطحونة بدقة عالية، وتتميز بثقافة عريقة تعود للدولة العثمانية.
               </p>
-              <a href="./pages/turkish.html" class="btn btn-primary">التفاصيل</a>
+              <a href="turkish.html" class="btn btn-primary" target="_blank">التفاصيل</a>
             </div>
           </div>
         </div>
@@ -182,40 +184,46 @@
     </section>
 
     <!-- ✅ قسم اتصل بنا -->
-    <section id="contact" class="py-5 text-center bg-white">
+    <section id="contact" class="py-5 bg-white">
       <div class="container">
-        <h2 class="mb-4">اتصل بنا</h2>
-        <div class="row text-start align-items-start">
+        <h2 class="mb-3 text-center mt-3">اتصل بنا</h2>
+        <div class="row g-4 align-items-center">
 
           <!-- ✅ الموقع على الخريطة -->
-          <div class="col-md-6 mb-3">
+          <div class="col-12 col-md-6">
             <iframe
               src="https://maps.google.com/maps?q=Riyadh&t=&z=13&ie=UTF8&iwloc=&output=embed"
               width="100%"
-              height="250"
+              height="400"
               style="border:0;"
               allowfullscreen=""
               loading="lazy"
             ></iframe>
           </div>
-          <!-- ✅ العنوان وساعات العمل -->
-          <div class="col-md-6">
-            <h5>موقعنا</h5>
-            <p>حي العارض - الرياض ، المملكة العربية السعودية</p>
-            <p><strong>أيام العمل: </strong> الأحد - الخميس</p>
-            <p><strong>ساعات العمل : </strong> 9 صباحًا - 6 مساءً</p>
+
+          <!-- ✅ العنوان وساعات العمل + نموذج التواصل -->
+          <div class="col-12 col-md-6 mt-4">
+            <div class="text-center mb-1 mt-4">
+              <h5 class="address">موقعنا</h5>
+                <p>حي العارض - الرياض ، المملكة العربية السعودية</p>
+                <p><strong>أيام العمل: </strong> الأحد - الخميس</p>
+                <p><strong>ساعات العمل : </strong> 9 صباحًا - 6 مساءً</p>
+            </div>
 
             <!-- ✅ نموذج التواصل -->
             <form>
-              <div class="mb-3">
-                <input type="text" class="form-control" placeholder="الاسم" required />
+              <!-- الاسم والبريد جنب بعض -->
+              <div class="d-flex flex-wrap gap-2 mb-1">
+                <input type="text" class="form-control flex-grow-1" placeholder="الاسم" required />
+                <input type="email" class="form-control flex-grow-1" placeholder="البريد الإلكتروني" required />
               </div>
-              <div class="mb-3">
-                <input type="email" class="form-control" placeholder="البريد الإلكتروني" required />
+
+              <!-- الرسالة -->
+              <div class="mb-1">
+                <textarea class="form-control" placeholder="رسالتك" rows="2" required></textarea>
               </div>
-              <div class="mb-3">
-                <textarea class="form-control" placeholder="رسالتك" rows="4" required></textarea>
-              </div>
+
+              <!-- زر الإرسال -->
               <button type="submit" class="btn btn-primary">إرسال</button>
             </form>
           </div>
@@ -223,27 +231,54 @@
       </div>
     </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-4 mt-5">
-    <div class="container">
-      <!-- النشرة البريدية -->
-      <div class="mb-4">
-        <h5>اشترك في نشرتنا البريدية</h5>
-        <form class="row g-2">
-          <div class="col-md-9">
-            <input type="email" class="form-control" placeholder="أدخل بريدك الإلكتروني" required />
+    <!-- Footer -->
+    <footer class="footer py-5 mt-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- القسم الأول: روابط التواصل -->
+          <div class="col-12 col-md-6 mb-4 mb-md-0 text-center text-md-center">
+            <h5 class="footer-title mb-4 text-center text-md-center">تابعنا على</h5>
+            <ul class="social-links list-unstyled d-flex justify-content-center justify-content-md-center gap-3">
+              <li>
+                <a href="#" class="social-link d-flex flex-column align-items-center">
+                  <i class="bi bi-facebook"></i>
+                  <span>فيسبوك</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link d-flex flex-column align-items-center">
+                  <i class="bi bi-twitter-x"></i>
+                  <span>تويتر</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link d-flex flex-column align-items-center">
+                  <i class="bi bi-instagram"></i>
+                  <span>إنستجرام</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="social-link d-flex flex-column align-items-center">
+                  <i class="bi bi-linkedin"></i>
+                  <span>لينكدإن</span>
+                </a>
+              </li>
+            </ul>
           </div>
-          <div class="col-md-3">
-            <button type="submit" class="btn btn-primary w-100">اشترك</button>
+          <!-- القسم الثاني: الاشتراك -->
+          <div class="col-12 col-md-6">
+            <h5 class="footer-title mb-4 text-center">اشترك في النشرة البريدية</h5>
+            <form class="subscribe-form d-flex flex-column flex-md-row gap-3 justify-content-center justify-content-md-center">
+              <input type="email" class="form-control" placeholder="ادخل بريدك الإلكتروني" required>
+              <button type="submit" class="btn btn-coffee">اشترك</button>
+            </form>
           </div>
-        </form>
+        </div>
+        <!-- الحقوق -->
+        <div class="footer-bottom text-center py-3">
+          <small class="mb-0">جميع الحقوق محفوظة لشركة القهوة 2025 ©</small>
+        </div>
       </div>
-
-      <!-- الحقوق -->
-      <div class="text-center mt-3">
-        <small>© 2025 جميع الحقوق محفوظة لشركة القهوة</small>
-      </div>
-    </div>
-  </footer>
+    </footer>
   </body>
 </html>
