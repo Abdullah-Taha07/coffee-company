@@ -1,0 +1,21 @@
+// _components.scss
+@use 'variables' as vars;
+
+.card {
+  border-radius: vars.$border-radius;
+  box-shadow: vars.$box-shadow;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .card-img-top {
+    border-top-left-radius: vars.$border-radius;
+    border-top-right-radius: vars.$border-radius;
+  }
+
+  .card-title {
+    color: vars.$primary-color;
+  }
+}

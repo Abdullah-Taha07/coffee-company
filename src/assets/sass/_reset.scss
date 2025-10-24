@@ -1,0 +1,19 @@
+// _reset.scss
+@use 'variables' as vars;
+
+// إعادة تعيين بسيطة
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: vars.$font-family-base;
+  background-color: vars.$background-color;
+  color: vars.$text-color;
+  direction: rtl;
+  text-align: right;
+}

@@ -1,0 +1,479 @@
+// 1️⃣ استيراد مكتبات Sass الحديثة
+@use "sass:color";
+@use "sass:map";
+@use 'variables' as vars;
+
+// 🎨 ألوان القهوة الرئيسية
+$coffee-main: #6f4e37;
+
+// لون أفتح من القهوة (للتدرجات والـ hover)
+$coffee-light: color.adjust($coffee-main, $lightness: 20%);
+
+// لون أغمق من القهوة (للأزرار النشطة والظلال الداكنة)
+$coffee-dark: color.adjust($coffee-main, $lightness: -15%);
+
+// لون الخلفية الفاتح العام للموقع
+$coffee-bg: #f8f5f2;
+
+// 🧭 إعدادات النافبار Navbar
+$navbar-bg: $coffee-bg !default;
+$navbar-border: #d8cfc7 !default;
+$navbar-border-w: 1px !default;
+$navbar-zindex: 999 !default;
+$navbar-width: 100vw !default;
+$navbar-breakpoint: 991.98px !default;
+$navbar-padding-x: 1.5rem !default;
+
+// 🌫️ ظلال العناصر والمسافات العامة
+$shadow-light: 0 4px 10px rgba($coffee-dark, 0.15);
+$shadow-strong: 0 6px 20px rgba($coffee-dark, 0.3);
+$shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+$space-section: 8rem;
+$space-section-mobile: 6rem;
+
+// 🧩 الميكسنز (Mixins)
+@mixin nav-link-hover {
+  background-color: $coffee-light;
+  color: #fff;
+  box-shadow: $shadow-hover;
+}
+
+@mixin nav-link-active {
+  background-color: $coffee-dark;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+// 🔝 تصميم الـ Header و الـ Navbar
+header {
+  .navbar {
+    width: $navbar-width;
+    margin: 0;
+    padding-inline: $navbar-padding-x !important;
+    background-color: $navbar-bg;
+    border-bottom: $navbar-border-w solid $navbar-border;
+    box-shadow: vars.$box-shadow;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    .navbar-nav {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-link {
+      color: $coffee-dark;
+      padding: 1rem;
+      font-weight: 700;
+      font-size: large;
+      border-radius: 0.375rem;
+      position: relative;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+
+      &:hover {
+        @include nav-link-hover;
+      }
+
+      &.active {
+        @include nav-link-active;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: $coffee-light;
+        transition: width 0.3s ease-in-out;
+        transform: translateX(-50%);
+      }
+
+      &:hover::after,
+      &.active::after {
+        width: 80%;
+      }
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: $coffee-dark;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: color 0.3s ease;
+
+      img.logo {
+        width: 35px;
+        height: 35px;
+      }
+
+      &:hover {
+        color: $coffee-light;
+      }
+    }
+
+    .navbar-toggler {
+      margin-inline-start: 0.5rem;
+      border: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    @media (max-width: $navbar-breakpoint) {
+      .navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        background-color: rgba(248, 245, 242, 0.6);
+        backdrop-filter: blur(6px);
+        z-index: $navbar-zindex;
+        border-top: $navbar-border-w solid $navbar-border;
+        padding: 1rem 3rem;
+      }
+
+      .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+
+        .nav-link {
+          width: 90%;
+          text-align: center;
+          display: block;
+          cursor: pointer;
+
+          &:hover {
+            @include nav-link-hover;
+          }
+
+          &.active {
+            @include nav-link-active;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ☕ قسم الـ Hero
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background: url("https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1470&q=80")
+    center/cover no-repeat;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 4rem;
+  animation: fadeInHero 1.2s ease-in-out both;
+
+  h1 {
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: vars.$border-radius;
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0;
+    animation: fadeInText 1.5s ease-in-out 0.3s forwards;
+  }
+}
+
+@keyframes fadeInHero {
+  0% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// 📦 أقسام الصفحة
+#about,
+#footer,
+#contact,
+#products,
+#services {
+  padding: $space-section 0;
+
+  h2 {
+    color: $coffee-main;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .row {
+    text-align: center;
+
+    .col-md-4 {
+      margin-bottom: 2rem;
+
+      .card {
+        padding: 2rem;
+        box-shadow: $shadow-light;
+        border-radius: 1rem;
+        height: 100%;
+        transition: all 0.3s ease;
+
+        h5 {
+          color: $coffee-dark;
+          font-weight: 700;
+          font-size: 1.4rem;
+          margin-bottom: 1rem;
+          font-family: 'Cairo', sans-serif;
+        }
+
+        p {
+          color: color.adjust($coffee-dark, $lightness: 10%);
+          font-weight: 500;
+          font-size: 1.1rem;
+          line-height: 1.6;
+          font-family: 'Cairo', sans-serif;
+        }
+
+        &:hover {
+          box-shadow: $shadow-strong;
+          transform: translateY(-5px);
+        }
+      }
+    }
+  }
+}
+
+// 📱 تحسين العرض في الجوال
+@media (max-width: 767.98px) {
+  #services {
+    padding: $space-section-mobile 1rem;
+
+    .row .col-md-4 .card {
+      padding: 1.5rem;
+
+      h5 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+// 🧍 الفوتر
+$footer-bg: #1e1e1e;
+$footer-text: #f5f5f5;
+
+.footer {
+  background-color: $footer-bg;
+  color: $footer-text;
+  padding-block: 4rem;
+
+  .footer-title {
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  .social-links {
+    justify-content: center;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+
+    li {
+      text-align: center;
+
+      .social-link {
+        color: $footer-text;
+        text-decoration: none;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+
+        i {
+          font-size: 1.8rem;
+          margin-bottom: 5px;
+          transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        &:hover {
+          color: $coffee-main;
+
+          i {
+            color: $coffee-main;
+            transform: translateY(-3px);
+          }
+        }
+      }
+    }
+  }
+
+  .subscribe-form {
+    input {
+      border: 1px solid #444;
+      background-color: #2a2a2a;
+      color: $footer-text;
+      padding: 0.75rem 2rem;
+      transition: border-color 0.3s ease;
+      width: 100%;
+
+      &::placeholder {
+        color: #aaa;
+      }
+
+      &:focus {
+        border-color: $coffee-main;
+        box-shadow: 0 0 8px rgba($coffee-main, 0.5);
+      }
+    }
+
+    .btn-coffee {
+      background-color: $coffee-main;
+      color: #fff;
+      border: none;
+      font-size: 1.1rem;
+      padding: 0.75rem 3rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: color.adjust($coffee-main, $lightness: -10%);
+        transform: translateY(-2px);
+      }
+
+      @media (max-width: 767.98px) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.footer-bottom {
+  margin-top: 1.5rem;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* ☎️ قسم اتصل بنا */
+#contact {
+  background-color: $coffee-bg; // لون الخلفية الفاتح للموقع
+  padding: 6rem 0;              // مسافة padding فوق وتحت
+
+  /* عنوان القسم */
+  h2 {
+    color: $coffee-main;        // لون العنوان الرئيسي (لون القهوة)
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;         // العنوان في المنتصف
+  }
+
+  /* الصف الذي يحتوي الخريطة والنموذج */
+  .row {
+    display: flex;              // استخدام flex لجعل العناصر جنب بعض
+    align-items: flex-start;
+    justify-content: space-between;            // السماح للعنصرين بالانخفاض عند الحاجة
+    gap: 2rem;                  // مسافة بين الأعمدة
+  }
+
+  /* كل عمود داخل row (الخريطة أو النموذج) */
+  .row > * {
+    flex: 1 1 48%;              // كل عمود ياخد تقريباً نصف العرض مع السماح بالانكماش أو التوسع
+  }
+
+  /* الخريطة */
+  iframe {
+    width: 100%;                // ملء عرض العمود بالكامل
+    height: 350px;              // ارتفاع ثابت للخريطة
+    border-radius: 10px;        // زوايا دائرية
+    box-shadow: $shadow-light;  // ظل خفيف
+  }
+
+  /* معلومات العنوان */
+  .address {
+    color: $coffee-dark;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  /* نموذج التواصل */
+  form {
+    margin-top: 5px;
+
+    /* الحقول (الاسم، البريد، الرسالة) */
+    input,
+    textarea {
+      border: 1px solid #ccc;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 5px;
+      width: 100%;              // تعبئة عرض العمود بالكامل
+      text-align: right;
+      background-color: #fff;
+
+      &:focus {
+        border-color: $coffee-main;
+        box-shadow: 0 0 8px rgba($coffee-main, 0.25);
+        outline: none;
+      }
+    }
+
+    /* زر الإرسال */
+    button {
+      background-color: $coffee-main;
+      color: #fff;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $coffee-dark;
+      }
+    }
+  }
+
+  /* 💻 تعديل للشاشات الصغيرة */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;   // اجعل الأعمدة فوق بعض على الموبايل
+    }
+
+    .row > * {
+      flex: 1 1 100%;           // كل عمود يأخذ العرض الكامل
+    }
+
+    iframe {
+      height: 250px;            // تصغير ارتفاع الخريطة للموبايل
+    }
+  }
+}

@@ -1,0 +1,55 @@
+// _variables.scss
+// ================================
+// خطوط وألوان وحواف وظلال
+// ================================
+
+// 🅰️ الخطوط
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo-SemiBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// 🎨 الألوان
+$primary-color: #6f4e37;
+$secondary-color: #d3bfa5;
+$background-color: #f8f5f2;
+$text-color: #333;
+
+// 🔤 الخطوط
+$font-family-base: 'Cairo', sans-serif;
+
+// 🔲 الحواف والظلال
+$border-radius: 0.5rem;
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+// ✨ كلاسّات المساعدة للخطوط
+.cairo-regular {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 400;
+}
+
+.cairo-bold {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+}
+
+// 🧭 إعدادات الجسم العامة
+body {
+  font-family: $font-family-base;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+$box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+$border-radius: 0.5rem; // إذا استخدمته لاحقًا

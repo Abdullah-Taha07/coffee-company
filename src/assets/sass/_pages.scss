@@ -1,0 +1,198 @@
+// _pages.scss
+
+// ✅ استيراد مكتبات Sass الجديدة
+@use "sass:color";
+@use "sass:map";
+@use "variables" as vars;
+
+// ---------------------------
+// 🔄 إعادة تعيين عامة (Reset)
+// ---------------------------
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: vars.$font-family-base;
+  background-color: vars.$background-color;
+  color: vars.$text-color;
+  direction: rtl;
+  text-align: right;
+  min-height: 100vh;
+
+  // تحسين وضوح الخطوط
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ---------------------------
+// ☕ تعريف ثيمات المنتجات
+// ---------------------------
+$themes: (
+  "cappuccino": (
+    bg: #f9f4ef,
+    primary: #c7a17a,
+    heading: #4b3832
+  ),
+  "coffee": (
+    bg: #fff8f0,
+    primary: #a67b5b,
+    heading: #3e2723
+  ),
+  "turkish": (
+    bg: #f4efe6,
+    primary: #b08968,
+    heading: #3b2f2f
+  )
+);
+
+// ---------------------------
+// 🎨 مزيج لتطبيق الثيم
+// ---------------------------
+@mixin apply-theme($theme-name) {
+  // ✅ استخدم map.get بدلاً من map-get
+  $theme: map.get($themes, $theme-name);
+
+  background-color: map.get($theme, bg);
+  color: map.get($theme, heading);
+
+  h1, h2, h3, h4, h5 {
+    color: map.get($theme, heading);
+  }
+
+  .btn {
+    background-color: map.get($theme, primary);
+    border: none;
+    color: #fff;
+
+    // ✅ استخدم color.adjust بدلاً من darken
+    &:hover {
+      background-color: color.adjust(map.get($theme, primary), $lightness: -10%);
+    }
+  }
+}
+
+// ---------------------------
+// 🧩 تطبيق الثيمات ديناميكياً
+// ---------------------------
+@each $name, $map in $themes {
+  body[data-theme="#{$name}"] {
+    @include apply-theme($name);
+  }
+}
+// صفحة الموزعين
+// 🟤 ألوان القهوة
+$coffee-main: #6f4e37;      // لون أساسي
+$coffee-light: #a67c52;     // أفتح
+$coffee-dark: #4b3621;      // أغمق
+$card-bg: #fff5f0;          // خلفية البطاقة فاتحة
+$card-shadow: 0 6px 20px rgba(0,0,0,0.15);
+$border-radius: 12px;
+
+// 🧩 ميكسن للبطاقة
+@mixin distributor-card {
+  background-color: $card-bg;
+  border-radius: $border-radius;
+  box-shadow: $card-shadow;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    cursor: pointer;
+  }
+
+  .map-container {
+    flex: 1;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      border-radius: $border-radius 0 0 $border-radius;
+    }
+  }
+
+  .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+
+    h5 {
+      font-weight: 700;
+      color: $coffee-dark;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    p {
+      margin: 0.25rem 0;
+      color: $coffee-main;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    // تحسين hover للنصوص
+    &:hover p {
+      color: $coffee-light;
+    }
+  }
+}
+
+// 📦 تطبيق الميكسن على الكلاس مباشرة
+.distributor-card {
+  @include distributor-card;
+}
+
+// 📦 قسم الموزعين
+#distributors {
+  padding: 4rem 1rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: $coffee-dark;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  // عرض البطاقة على الهواتف واللوحات
+  .col-12.col-lg-6 {
+    width: 100%;
+    @media (min-width: 992px) {
+      width: calc(50% - 1rem);
+    }
+  }
+}
+
+// 📱 تجاوب للشاشات الصغيرة والمتوسطة
+@media (max-width: 991.98px) {
+  .distributor-card {
+    flex-direction: column;
+
+    .map-container {
+      height: 200px;
+      border-radius: $border-radius $border-radius 0 0;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+  }
+}
