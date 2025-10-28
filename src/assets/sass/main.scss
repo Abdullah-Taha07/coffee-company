@@ -1,0 +1,11 @@
+// نقطة البداية لكل ملفات SCSS
+// استدعاء Bootstrap
+@use "bootstrap" as *;
+
+// استدعاء ملفات المشروع
+@use "variables" as *;  // المتغيرات
+@use "mixins";          // الميكسنز
+@use "reset";           // إعادة تعيين التنسيقات الأساسية
+@use "layout";          // الهيكل العام
+@use "sections";        // أقسام الصفحة
+@use "pages";           // صفحات محددة وثيمات
