@@ -1,0 +1,262 @@
+// ================================
+// _layout.scss
+// ================================
+@use 'sass:color';
+@use 'sass:map';
+@use 'variables' as vars;
+@use 'mixins' as mixins;
+
+// ================================
+// الهيدر + النافبار
+// ================================
+header {
+  background-color: vars.$navbar-bg;
+  border-bottom: vars.$navbar-border-w solid vars.$navbar-border;
+  width: vars.$navbar-width;
+  z-index: vars.$navbar-zindex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 vars.$navbar-padding-x;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+
+    a {
+      @include mixins.nav-link;    
+
+      &.active {
+        @include mixins.nav-link-active;
+      }
+    }
+  }
+}
+
+// ================================
+// النافبار
+// ================================
+.navbar {
+  width: vars.$navbar-width;
+  padding-inline: vars.$navbar-padding-x;
+  background-color: vars.$navbar-bg;
+  border-bottom: vars.$navbar-border-w solid vars.$navbar-border;
+  box-shadow: vars.$shadow-light;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  .navbar-nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+  }
+
+  .nav-link {
+    @include mixins.nav-link(1rem, 0.5rem);
+    font-weight: 600;
+    font-size: 20px;
+    position: relative;
+    border-radius: 10px;
+
+    &:hover {
+      @include mixins.nav-link-hover();
+    }
+
+    &.active {
+      @include mixins.nav-link-active();
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: vars.$coffee-light;
+      transition: width 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
+
+    &:hover::after,
+    &.active::after {
+      width: 80%;
+    }
+  }
+
+  .navbar-brand {
+    font-weight: 700;
+    color: vars.$coffee-dark;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    margin-top: auto;
+  &
+    img.logo {
+      width: 50px;
+      height: 47px;
+    }
+  
+@media (max-width: 992px) {
+  .navbar-nav  {
+    gap: 17px !important;
+  }
+}
+  }
+  @media (max-width: 768px) {
+    .navbar-collapse {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100vw;
+      background-color: rgba(248, 245, 242, 0.6);
+      backdrop-filter: blur(6px);
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+
+      &.show {
+        display: flex;
+      }
+
+      .nav-link {
+        padding: 1rem 2rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// ================================
+// المحتوى الرئيسي
+// ================================
+main {
+  margin-top: 60px;
+  font-family: vars.$font-family-base;
+  background-color: vars.$background-color;
+  color: vars.$text-color;
+  min-height: calc(100vh - 60px - 200px);
+  padding: 2rem;
+}
+
+// ================================
+// الفوتر
+// ================================
+.footer {
+  background-color: vars.$color-dark;
+  color: vars.$footer-text;
+  padding: 4rem 2rem;
+  text-align: center;
+
+  .footer-title {
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .footer-links {
+    margin-bottom: 1rem;
+
+    a {
+      margin: 0 0.5rem;
+      color: vars.$coffee-light;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #d4af37;
+      }
+    }
+  }
+
+  .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+
+    li .social-link {
+      @include mixins.nav-link(0.5rem, 0.25rem);
+      font-size: 1rem;
+      text-align: center;
+      border-radius: 18px;
+      transition: all 0.3s ease;
+      color: #fcfcfc;
+
+      i {
+        font-size: 1.4rem;
+        margin-bottom: 0.3rem;
+      }
+
+      &:hover {
+        background: linear-gradient(145deg, #d4af37, #b9962d);
+        color: #fff;
+        transform: scale(1.1);
+        box-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+      }
+
+      &:active {
+        transform: scale(0.97);
+        background-color: #a88525;
+      }
+    }
+  }
+
+  .subscribe-form input.form-control {
+    border-radius: vars.$border-radius;
+    padding: 0.8rem 2rem;
+    border: 1px solid color.adjust(vars.$footer-text, $lightness: -20%);
+    background-color: #2a2a2a;
+    color: #fcfcfc;
+
+    &::placeholder {
+      color: color.adjust(vars.$footer-text, $lightness: 70%);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: #d4af37;
+      box-shadow: 0 0 5px rgba(212, 175, 55, 0.4);
+    }
+  }
+
+  .btn-coffee {
+    background: #6f4e37;
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: vars.$border-radius;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: linear-gradient(145deg, #b9962d, #d4af37);
+      color: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+    }
+
+    &:active {
+      transform: scale(0.97);
+      background-color: #a88525;
+      color: #fff;
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid color.adjust(vars.$footer-text, $lightness: -20%);
+    margin-top: 3rem;
+    padding-top: 1rem;
+
+    small {
+      color: color.adjust(vars.$footer-text, $lightness: 20%);
+    }
+  }
+}

@@ -1,0 +1,44 @@
+// _variables.scss
+// ===== الألوان الأساسية =====
+$coffee-main: #6f4e37;
+$coffee-light: #a67c52;
+$coffee-dark: #000000;
+
+$primary-color: $coffee-main; // اللون الرئيسي للموقع
+$background-color: #fdf6f0;
+$text-color: #3e2723;
+$border-color: #ddd;
+$color-white: #fff;
+$color-dark: #0c0908f5;
+
+// ===== ألوان الهيدر والفوتر =====
+$navbar-bg: #fff8f0;
+$navbar-border: #e2d7c5;
+$footer-bg: #3e2723;
+$footer-text: #fff;
+
+// ===== الظلال =====
+$shadow-light: 0 2px 8px rgba(0,0,0,0.1);
+$shadow-strong: 0 6px 20px rgba(0,0,0,0.15);
+
+// ===== الحدود ونصف القطر =====
+$border-radius: 12px;
+$navbar-border-w: 1px;
+
+// ===== الخطوط =====
+$font-family-base: sans-serif, 'cairo';
+
+// ===== أبعاد الهيدر =====
+$navbar-width: 100%;
+$navbar-padding-x: 0;
+$navbar-zindex: 1000;
+$navbar-breakpoint: 991px;
+$navbar-phones: 767px;
+
+// تعريف احجام الشاشات
+$breakpoints: (
+  'xl': 1200px,
+  'lg': 992px,
+  'md': 768px,
+  'sm': 576px
+);

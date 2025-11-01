@@ -1,0 +1,39 @@
+{
+  "name": "coffee-company",
+  "version": "1.0.0",
+  "description": "مشروع ويب احترافي مع Webpack وSass وBootstrap",
+  "main": "index.js",
+  "type": "module",
+  "homepage": "https://abdullah-taha07.github.io/coffee-company",
+  "scripts": {
+    "dev": "webpack serve --mode development --config webpack.config.js",
+    "build": "webpack --mode production --config webpack.config.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -b gh-pages -r https://github.com/abdullah-taha07/coffee-company.git"
+  },
+  "author": "Abdalla T Mohamed",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.28.5",
+    "@babel/preset-env": "^7.28.5",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "gh-pages": "^6.3.0",
+    "html-webpack-plugin": "^5.6.4",
+    "mini-css-extract-plugin": "^2.9.4",
+    "sass": "^1.93.2",
+    "sass-loader": "^16.0.6",
+    "style-loader": "^4.0.0",
+    "terser-webpack-plugin": "^5.3.14",
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1"
+  },
+  "babel": { "presets": ["@babel/preset-env"] }
+}
